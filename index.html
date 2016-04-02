@@ -51,7 +51,6 @@
 			scalebarUnit: 'english'
 			});
 		
-		var foo = prompt("Choose from: Aesthetics, Crime, Distance, Time, or Combinatorial (Default)");
 		dojo.connect(map, "onClick", addStop); 
 		
 		routeTask = new esri.tasks.RouteTask("http://141.209.175.197/arcgis/rest/services/Chicago_Routing_Service/NAServer/Combinatorial");
@@ -59,7 +58,6 @@
 		//set up the route parameters
         routeParams = new esri.tasks.RouteParameters();
         routeParams.stops = new esri.tasks.FeatureSet();
-		routeParams.impedanceAttribute = foo;
         routeParams.outSpatialReference = {"wkid":102100};
         
         dojo.connect(routeTask, "onSolveComplete", showRoute);
